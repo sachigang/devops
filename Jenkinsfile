@@ -4,5 +4,11 @@ node {
        	    checkout scm
 	    app = docker.build("sachi/test_app")
         	}
- }
+ 	stage('Test image') {           
+            app.inside {            
+              
+             sh './send_file.sh'        
+            }    
+        }     
+}
 
