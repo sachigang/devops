@@ -8,7 +8,7 @@ node {
             app.inside {            
               
              sh 'echo "Test Passed"' 
-		    sh 'whoami'
+		    sh 'chmod 777 send_file.sh'
 		sh './send_file.sh'
             }    
         }     
