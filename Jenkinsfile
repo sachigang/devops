@@ -7,7 +7,8 @@ node {
  	stage('Test image') {           
             app.inside {            
               
-             sh 'echo "Test Passed"'  
+             sh 'echo "Test Passed"' 
+		    sh 'whoami'
 		sh './send_file.sh'
             }    
         }     
