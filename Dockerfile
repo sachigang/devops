@@ -9,4 +9,4 @@ WORKDIR /flutter_app
 USER root
 RUN git clone https://github.com/sachigang/devops.git
 CMD chmod +x send_file.sh
-CMD ./send_file.sh
+CMD ["bash"]
