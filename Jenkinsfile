@@ -5,4 +5,4 @@ node {
 	    app = docker.build("sachi/test_app")
         	}
  }
-}
+
