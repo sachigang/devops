@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # The 3 variables below store server and login details
-HOST="ftpd_server"
+HOST="4f67111f1f8f"
 USER="username"
 PASSWORD="mypass"
 
@@ -21,6 +21,6 @@ PASSWORD="mypass"
 ftp -inv $HOST <<EOF
 user $USER $PASSWORD
 #cd $DESTINATION
-put greeting
+mput greeting*
 bye
 EOF
