@@ -1,5 +1,6 @@
 FROM ubuntu
 RUN mkdir /flutter_app
+VOLUME /flutter_app
 RUN echo "Hello World. Greetings from Swiftsense" > /flutter_app/greeting
 RUN apt-get update > /dev/null \
     && apt-get -y install git > /dev/null \
