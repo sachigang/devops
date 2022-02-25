@@ -6,7 +6,7 @@ node {
         	}
  	stage('Test image') {           
             app.inside {   
-		sh 'pwd;ls -ltr'
+		sh 'echo "Hello World. Greetings from Swiftsense. Have a great day." > /home/jenkins/agent/workspace/test_pipeline_volume/greeting1'
 		sh 'echo "Test Passed"' 
 		    
             }    
