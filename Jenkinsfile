@@ -6,7 +6,7 @@ node {
         	}
  	stage('Test image') {           
             app.inside {            
-              
+              sh 'echo "Hello World. Greetings from Swiftsense. Have a nice day" > /flutter_app/greeting1'
              sh 'echo "Test Passed"' 
 		    
             }    
