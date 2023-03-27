@@ -2,7 +2,7 @@ node {
       def app     
     stage('Pull image and build') {
        	    checkout scm
-	    app = docker.build("sachi/test_image")
+	    app = docker.build("sachigang/sachi_test:env.BUILD_NUMBER")
         	}
  	stage('Test image') {           
             app.inside {   
@@ -12,6 +12,13 @@ node {
 		    sh './send_file.sh'
 		    
             }    
-        }     
+        }  
+	stage('Push Image') {
+      steps {
+        withCredentials([usernamePassword(credentialsId: 'docker-hub-creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+          sh "docker login -u $USERNAME -p $PASSWORD"
+        }
+        sh 'docker push sachigang/sachi_test:env.BUILD_NUMBER'
+      }
 }
 
