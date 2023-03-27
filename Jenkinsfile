@@ -19,6 +19,8 @@ node {
           sh "docker login -u $USERNAME -p $PASSWORD"
         }
         sh 'docker push sachigang/sachi_test:env.BUILD_NUMBER'
-      }
+   }
+  }
+ }
 }
 
