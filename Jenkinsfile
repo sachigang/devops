@@ -13,11 +13,8 @@ node {
             }    
         }  
 	stage('Push Image') {
-      steps {
-        withCredentials([usernamePassword(credentialsId: 'docker-hub-creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-          sh "docker login -u $USERNAME -p $PASSWORD"
-        }
-        sh 'docker push sachigang/sachi_test:env.BUILD_NUMBER'
+        docker.withRegistry('https://hub.docker.com/', 'docker-hub-creds') { 
+	    app.push("${env.BUILD_NUMBER}")
    }
   }
  }
