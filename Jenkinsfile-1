@@ -1,0 +1,16 @@
+node {   
+      def dockerImage
+    stage('Clone repository') {
+        checkout scm
+    }
+    
+    stage('Build image') {
+       dockerImage = docker.build("sachigang/test:latest")
+    }
+    
+ stage('Push image') {
+        withDockerRegistry([ credentialsId: "docker-hub-creds", url: "" ]) {
+        dockerImage.push()
+        }
+    }    
+}
