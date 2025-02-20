@@ -1,4 +1,4 @@
-FROM ubuntu:18:04
+FROM ubuntu:18.04
 RUN mkdir /flutter_app
 VOLUME /home/jenkins/agent
 RUN apt-get update > /dev/null \
