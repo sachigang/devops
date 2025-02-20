@@ -1,7 +1,6 @@
-FROM ubuntu
+FROM ubuntu:18:04
 RUN mkdir /flutter_app
 VOLUME /home/jenkins/agent
-RUN echo "Hello World. Greetings from Swiftsense" > /flutter_app/greeting
 RUN apt-get update > /dev/null \
     && apt-get -y install git > /dev/null \
     && apt-get -y install ftp > /dev/null \
